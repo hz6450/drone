@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
-//import firestore from '@react-native-firebase/firestore';
-
-// import messaging from '@react-native-firebase/messaging';
+import firestore from '@react-native-firebase/firestore';
+ import messaging from '@react-native-firebase/messaging';
 
 const HomeScreen = () => {
   // 좌표 데이터 상태
@@ -31,10 +30,10 @@ const HomeScreen = () => {
 
   useEffect(() => {
     fetchCoordinates();
-  //   const subscribe = async () => {
-  //     await messaging().subscribeToTopic('game');
-  //   };
-  //   subscribe();
+    const subscribe = async () => {
+      await messaging().subscribeToTopic('game');
+    };
+    subscribe();
   }, []);
 
   // 좌표 클릭 시 지도 중심 위치 변경
