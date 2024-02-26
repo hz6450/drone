@@ -2,12 +2,12 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Alert } from 'react-native';
 import React, { useEffect } from 'react';
 import messaging from '@react-native-firebase/messaging';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from './components/HomeScreen'; // 임포트 추가
-import SettingsScreen from './components/SettingsScreen'; // 임포트 추가
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// import HomeScreen from './components/HomeScreen'; // 임포트 추가
+// import SettingsScreen from './components/SettingsScreen'; // 임포트 추가
 
-const Tab = createBottomTabNavigator();
+// const Tab = createBottomTabNavigator();
 
 function App() {
 
@@ -61,14 +61,24 @@ useEffect(() => {
 }, [])
 
 return (
-  <NavigationContainer>
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
-    </Tab.Navigator>
-  </NavigationContainer>
+  <View style={styles.container}>
+    <Text>test</Text>
+    <StatusBar style="auto" />
+  </View>
 );
 }
+
+// return (
+//   <>
+//   </>
+//   // <NavigationContainer>
+//   //   <Tab.Navigator>
+//   //     <Tab.Screen name="Home" component={HomeScreen} />
+//   //     <Tab.Screen name="Settings" component={SettingsScreen} />
+//   //   </Tab.Navigator>
+//   // </NavigationContainer>
+// );
+// }
 
 const styles = StyleSheet.create({
   container: {
